@@ -1,0 +1,207 @@
+body{
+    width: 100%;
+    margin: 0px;
+}
+.nav {
+    display: flex;
+    justify-content: end;
+    background-color: #0066a7;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+
+
+
+}
+
+.image {
+    filter: invert(100%);
+    width: 40px;
+    margin-top: 4px;
+}
+
+
+.nav div {
+
+    margin-right: 10px;
+    color: white;
+    font-size: 15px;
+}
+
+.nav :nth-child(2) div h6 {
+    margin-top: -20px;
+}
+
+.nav :nth-child(2) {
+    margin-top: -13px;
+}
+
+#logo {
+    display: flex;
+    color: #0066a7;
+    margin-left: 45px;
+
+
+}
+
+#logo h1 {
+    font-family: 'Secular One', sans-serif;
+    font-weight: 800;
+}
+
+.logo {
+    width: 10%;
+}
+
+.bike {
+    margin-top: 120px;
+}
+
+
+#container>div:nth-child(1) {
+    margin-left: 25px;
+    margin-top: 20px;
+
+
+}
+
+#container label {
+    margin-left: 45px;
+    font-family: 'Signika', sans-serif;
+}
+
+#container h3 {
+    margin-left: 50px;
+    font-family: 'Signika', sans-serif;
+    color: rgb(76, 76, 76);
+}
+
+#container {
+    display: flex;
+    justify-content: space-around;
+}
+
+#container :nth-child(2) img {
+    width: 698px;
+    margin-top: 2px;
+
+}
+
+#container .bike {
+    width: 700px;
+}
+
+.insideInput {
+    border: 1px solid lightblue;
+    display: block;
+    height: 50px;
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 50px;
+
+}
+
+.insideInput button {
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 30px;
+    font-weight: bolder;
+    border-radius: 3px;
+    background-color: rgb(70, 197, 202);
+
+    margin-top: 10px;
+    margin-left: 170px;
+    cursor: pointer;
+    background-color: rgb(7, 150, 7);
+
+
+
+
+}
+
+.insideInput button a {
+    color: white;
+    text-decoration: none;
+}
+
+.insideInput input {
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    padding-right: 20px;
+    ;
+}
+
+#footer {
+    background-color: #222e3a;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    /* padding-bottom: 20px; */
+    margin-top: 90px;
+    
+
+
+
+
+
+}
+
+#footer #span {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #628aa9;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    
+    
+
+
+}
+
+#footerlogo {
+    display: flex;
+    color: white;
+    font-size: 13px;
+    margin-top: -10px;
+    
+
+}
+
+#footerlogo h1 {
+    font-family: 'Secular One', sans-serif;
+    font-weight: 800;
+}
+
+#footerdiv2 {
+    color: #628aa9;
+    font-weight: 100px;
+    margin-right: 40px;
+    font-family: 'Secular One', sans-serif;
+}
+
+#footerdiv2 p {
+    font-size: 19px;
+}
+
+#footerdiv2 img {
+    width: 300px;
+    cursor: pointer;
+}
+
+#footerdiv1 {
+    margin-left: 20px;
+}
+
+#copyright {
+    text-align: center;
+    background-color: #19232e;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    color: #628aa9;
+    font-size: 12px;
+}
