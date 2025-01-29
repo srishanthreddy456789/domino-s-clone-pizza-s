@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+
+
+    <div id="container">
+        <div id="nav">
+
+<div id="left-side-nav">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div><a href="#">TRACK CURRENT ORDER</a></div>
+        <div><a href="#">Order History</a></div>
+        <div><a href="#">Home</a></div>
+        <div><a href="#">Deals & Offers</a></div>
+        <div><a href="#">Menu</a></div>
+        <div><a href="#">Everyday Value Offers</a></div>
+        <div><a href="#">Terms & Conditions</a></div>
+        <div><a href="#">Feedback</a></div>
+        <div><a href="#">Bulk Order</a></div>
+
+</div>
+<div>
+    <span style="font-size:18px;cursor:pointer;color:white;padding-left: 20px;" onclick="openNav()">&#9776; </span>
+</div>
+
+
+<img src="/images/logo.png" alt="logo" class="logo">
+
+
+
+</div>
+<div id="login-nav-div" onclick="openNavright()">
+    <div>
+        <div class="profile"><img src="https://pizzaonline.dominos.co.in/static/assets/avatar.svg" alt="avatar"
+                data-label="profile">
+        </div>
+        <div data-label="my-account" class="login-signup">
+            <div id="account">MY ACCOUNT</div>
+            <div class="profile-text">Login | Signup</div>
+        </div>
+    </div>
+    </div>
+    <div id="mySidenavRight" class="sidenavright" style="display:none">
+        <a href="javascript:void(0)" id="closebtnright" onclick="closeNavright()">&times;</a>
+        <!-- Here creating login page -->
+        <div class="side-nav" style="width: 32%;">
+
+            <div class="right-slide-form"><img class="background-img"
+                    src="https://pizzaonline.dominos.co.in/static/assets/login_pizza_image.png" class="logoimg" src="/logo.png">
+                <div class="hd-img">
+            
+                    <div class="offer_text">
+            
+                        <div><img class="sub" src="https://pizzaonline.dominos.co.in/static/assets/icons/great_food.svg">
+            
+                            <p>Great
+                                <br>
+                                Food
+                                </p>
+                                
+                                </div>
+                                <div><img class="sub" src="https://pizzaonline.dominos.co.in/static/assets/icons/great_offers.svg">
+                                
+                                    <p>Great
+                                        <br>
+                                Offers
+                                </p>
+                                
+                                </div>
+                                <div><img class="sub" src="https://pizzaonline.dominos.co.in/static/assets/icons/easy_reorder.svg">
+                                
+                                    <p>Easy <br> Reordering</p>
+                                
+                                </div>
+                                </div>
+                                </div>
+                                <div class="loginForm">
+                                    <p><span id="login" style=" cursor: pointer;">LogIn</span> <span>/</span><span id="signup"
+                                            style=" cursor: pointer;">SignUp</span></p>
+                                    <div id="form-here">
+
+                            <!-- Write login signup code here -->
+                            </div>
+                            
+                            </div>
+                            
+                            <div class="social">
+                                <h4> Login with social accounts</h4>
+                                <div class="socialbutton">
+                                    <div type="button" class="facebook">
+                                        <button class="blue-fb">
+                                            <span>Facebook</span>
+                                        </button>
+                                    </div>
+                                    <div type="button" class="google">
+                                        <button class="red-google">
+                                            <span>Google</span>
+                                        </button>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    
+                                    <div id="terms">TERMS OF USE</div>
+                                    </div>
+                                    </div>
+                                    </div>
+
+
+</div>
+
+
+<!-- Middle Section left -->
+<div id="middle-sec">
+<!-- start -->
+<div id="show-cart-items">
+    <div>
+        <span class="span-text" style="margin-left: 50px;">2 Items you have selected</span>
+        </div>
+        <div>
+            <!-- <div id="card">
+                                                                                                                                                                        <div>
+                                                                                                                                                                            <div>
+                                                                                                                                                                                <img src="https://images.dominos.co.in/cart/new_peppy_paneer.jpg" alt="photo" id="cart-photo">
+                                            </div>
+                                            <div>
+                                                <span class="item-title">Peppy Paneer</span>
+                    <br>
+                    <span class="item-description">Flavorful trio of juicy paneer, crisp capsicum with spicy red paprika</span>
+                    <div class="item-option"><span>Medium</span><span>|</span><span>New Hand Tossed</span></div>
+                    <hr style="width:95%;text-align:left;margin-left:0;text-decoration: dashed;">
+                    <p id="customization-head">Your Customization</p>
+                    <p id="customization-title">Added Toppings : <span>Extra Cheese</span></p>
+                    </div>
+                    <div>
+                        <div class="increase-price">
+                            <div class="price">
+                                <div class="price-final"><span class="rupee"> ₹ 1108.00</span></div>
+                                </div>
+                                <div id="quantity-change">
+                                    <div> <img src="https://pizzaonline.dominos.co.in/static/assets/icons/minus.svg" alt=""></div>
+                                    |<div>2</div> |
+                                    <div><img src="https://pizzaonline.dominos.co.in/static/assets/icons/plus.svg" alt=""></div>
+                                </div>
+                                </div>
+                        </div>
+                        </div>
+                        </div> -->
+                        </div>
+                        </div>
+                        <!-- Middle Section right main div-->
+                        <div id="right-cart">
+                            <span class="span-text">Choose a delivery address</span>
+                <div>
+                    <div id="address">
+                        <div>
+                            <img src="https://pizzaonline.dominos.co.in/static/assets/icons/location_pin.png">
+                            </div>
+                        <div>
+                            <p style="font-weight: 600;">Current Address</p>
+                            <p class="current-address">Panchkuian, Rakabganj, Agra</p>
+                            <div>Edit Address</div>
+                        </div>
+                        <div>
+                            <button id="change">CHANGE</button>
+                        </div>
+                        </div>
+            <hr style="width:95%;text-align:left;margin-left:0;text-decoration: dashed;">
+
+            <div id="login-for-address">
+                <div> <img src="https://pizzaonline.dominos.co.in/static/assets/icons/login_new@3x.png" alt="" style="width:32%">
+                </div>
+                <div>
+                    <p>Login to use your saved addresses</p>
+                    </div>
+                    <div id="my-address">MY ADDRESS</div>
+                    </div>
+                    </div>
+                    <span class="span-text">Price Details</span>
+                    <div class="bill">
+                        <div class="sub-total"><span>Sub Total</span><span id="subTotalNow"></span></div>
+                        <div class="discount"><span>Discount</span><span id="discount"></span></div>
+                        <div class="tax"><span>Taxes And Charges</span><span id="total-tax"></span></div>
+
+        <div class="grand-total"><span>Grand Total</span><span id="grand"></span></div>
+
+        <div><button id="place-order">Place Order</button></div>
+        </div>
+        </div>
+
+
+<!-- Footer Section -->
+</div>
+<div id="header">
+</div>
+</body>
+
+</html>
+
+<script src="cart.js"></script>
+<script>
+    $(function () {
+        $('#header').load('footer.html');
+    })
+</script>
