@@ -1,0 +1,250 @@
+#menu-bar{
+    display:flex;
+    justify-content: space-around;
+    font-size: 12px;
+    font-weight: 600;
+    color:rgb(180, 191, 196);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-family: proxima-nova,sans-serif;
+}
+
+   body {
+       font-family: "Lato", sans-serif;
+   }
+
+   .sidenav {
+       height: 100%;
+       width: 0;
+       position: fixed;
+       z-index: 1;
+       top: 0;
+       left: 0;
+       background-color: rgb(246, 240, 240);
+       overflow-x: hidden;
+       transition: 0.5s;
+       padding-top: 60px;
+   }
+
+   .sidenav>div a {
+       padding: 8px 8px 8px 32px;
+       text-decoration: none;
+       font-size: 16px;
+       color: #818181;
+       display: block;
+       transition: 0.3s;
+       padding: 20px;
+   }
+
+   .sidenav a:hover {
+       color: #1c1b1b;
+       background-color: whitesmoke
+   }
+
+   .sidenav .closebtn {
+    position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+            margin-left: 50px;
+        color: #818181;
+            text-decoration: none;
+   }
+
+   @media screen and (max-height: 450px) {
+       .sidenav {
+           padding-top: 15px;
+       }
+
+       .sidenav a {
+           font-size: 18px;
+       }
+   }
+
+
+#nav-top {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0066A7;
+    color: white;
+    padding-top: 10px;
+}
+
+.logo {
+    height: 50px;
+    margin-left: 30px
+}
+
+.profile-text {
+    font-size: 0.72rem
+}
+
+.login-signup {
+    color: white
+}
+
+.profile>img {
+    width: 1.8rem;
+    margin-right: 1rem;
+
+}
+
+#account {
+    font-size: 0.75rem;
+}
+
+
+
+/*  for right side login form */
+.sidenavright {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(246, 240, 240);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    padding-left: 40px;
+}
+
+
+.sidenavright a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+
+    transition: 0.3s;
+}
+
+.sidenavright #closebtnright {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #818181;
+    text-decoration: none;
+
+}
+
+.offer_text>div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: black;
+}
+
+.socialbutton {
+    display: flex;
+    justify-content: space-around;
+}
+
+.offer_text {
+    display: flex;
+    color: black;
+}
+
+.sub {
+    margin-right: 12px;
+    margin-left: 12px;
+    color: black;
+}
+
+#form-here {
+    font-size: 15px;
+    color: black;
+}
+
+#form-here>input {
+    width: 100%;
+    background-color: white;
+    height: 20px;
+    font-size: 15px;
+    color: black;
+}
+
+button {
+    width: 60%;
+    padding: 5px;
+    border-style: none;
+    background-color: #0066A7;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: white;
+    margin-top: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.blue-fb {
+    background-color: #0066A7;
+    width: fit-content;
+    margin-right: 20px;
+    margin-left: 40px;
+}
+
+.red-google {
+    background-color: rgb(185, 45, 45);
+    width: fit-content;
+}
+
+
+
+#forgot>a {
+    font-size: 10px;
+    color: #0066A7
+}
+
+#terms {
+    font-size: 13px;
+    color: #0066A7;
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* navbar */
+
+
+
+
+
+#left-side-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content
+}
+
+
+#location img {
+    width: 4%
+}
+
+#mySidenavRight {
+    display: none;
+}
+
+#middle-nav {
+    margin-left: 50%;
+}
+
+#left-side-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content
+}
+
+#login-nav-div{
+    transition: 0.5s ease;
+}
+.right-slide-form>img{
+    width: 350px;
+    height: 200px;
+}
