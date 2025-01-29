@@ -1,12 +1,13 @@
 # Domino's-Clone-pizza's
 
+**Domono's provides pizza delivery and carryout services as well as dine-in services through its restaurants.**
 <div style="display: flex; justify-content: center; align-items: center;">
   <img style="border-radius: 10px" src="https://png.pngitem.com/pimgs/s/195-1956278_dominos-pizza-logo-png-transparent-png.png" height="100" alt="error">
   
 </div>
 
 
-**Domono's provides pizza delivery and carryout services as well as dine-in services through its restaurants.**
+
 
 
 ## Deployment Link -  https://amazing-alfajores-9f774e.netlify.app
