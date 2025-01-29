@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Open+Sans:wght@600&family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+    
+</head>
+<body>
+  
+<!-- //****** -->
+<div id="nav-container">
+  <div id="nav">
+      <div id="nav-top">
+          
+              <div id="left-side-nav">
+                  <div id="mySidenav" class="sidenav">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <div><a href="#">TRACK CURRENT ORDER</a></div>
+                  <div><a href="#">Order History</a></div>
+                  <div><a href="#">Home</a></div>
+                  <div><a href="#">Deals & Offers</a></div>
+                  <div><a href="#">Menu</a></div>
+                  <div><a href="#">Everyday Value Offers</a></div>
+                  <div><a href="#">Terms & Conditions</a></div>
+                  <div><a href="#">Feedback</a></div>
+                  <div><a href="#">Bulk Order</a></div>
+              
+              </div>
+<span style="font-size:18px;cursor:pointer;color:white;padding-left: 20px;" onclick="openNav()">&#9776; </span>
+<img src="/images/logo.png" alt="logo" class="logo">
+</div>
+<div id="middle-nav">
+  <label style="font-size: 14px;">
+      <input type="radio" readonly="" name="delivery-type">
+      <span>Delivery</span>
+      <input type="radio" readonly="" name="delivery-type">
+      <span>Pick Up/Dine-in</span>
+  </label>
+</div>
+      <!-- <label id="location">
+      
+      
+          <span><img src="https://pizzaonline.dominos.co.in/static/assets/icons/location_white.png" alt=""></span>
+          <input type="text" readonly="" name="delivery-location" style="background-color: #217eb8; height: 30px;">
+          <span><img src="https://pizzaonline.dominos.co.in/static/assets/icons/edit@2x.png" alt=""></span>
+      </label> -->
+      
+      
+<div id="login-nav-div" onclick="openNavright()">
+  <div style="display: flex; margin-right: 40px; margin-top: 8px;">
+      <div class="profile"><img src="https://pizzaonline.dominos.co.in/static/assets/avatar.svg" alt="avatar"
+              data-label="profile">
+      </div>
+      <div data-label="my-account" class="login-signup">
+          <div id="account">MY ACCOUNT</div>
+          <div class="profile-text">Login | Signup</div>
+      </div>
+  </div>
+  </div>
+  <div id="mySidenavRight" class="sidenavright">
+      <a href="javascript:void(0)" id="closebtnright" onclick="closeNavright()">&times;</a>
+      <!-- Here creating login page -->
+
+      <div class="side-nav" style="width: 32%; transition: all 1s ease 0s; top: 3.1rem; right: 0px;">
+
+<div class="right-slide-form"><img class="background-img"
+      src="https://pizzaonline.dominos.co.in/static/assets/login_pizza_image.png" class="logoimg" src="/logo.png">
+  <div class="hd-img">
+      <div class="offer_text">
+          <div><img class="sub" src="https://pizzaonline.dominos.co.in/static/assets/icons/great_food.svg">
+              <p>Great
+                  <br>
+                  Food
+              </p>
+              
+              </div>
+              <div><img class="sub" src="https://pizzaonline.dominos.co.in/static/assets/icons/great_offers.svg">
+                  <p>Great
+                      <br>
+                      Offers
+                  </p>
+              </div>
+              <div><img class="sub" src="https://pizzaonline.dominos.co.in/static/assets/icons/easy_reorder.svg">
+                  <p>Easy <br> Reordering</p>
+              </div>
+              </div>
+              </div>
+              <div class="loginForm" style="color: black;">
+                  <p><span id="login" style=" cursor: pointer;">Login</span> <span>/</span><span id="signup"
+                          style=" cursor: pointer;">Signup</span></p>
+                  <div id="form-here">
+                      <!-- Write login signup code here -->
+                  </div>
+              </div>
+              <div class="social">
+                  <h4 id="log" style="color: black;"> Login with social accounts</h4>
+                  <div class="socialbutton">
+                      <div type="button" class="facebook">
+                          <button  class= 'blue-fb button1'>
+                              <span>Facebook</span>
+                          </button>
+                      </div>
+                      <div type="button" class="google">
+                          <button class="red-google button1">
+                              <span>Google</span>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+              <div id="terms">TERMS OF USE</div>
+              </div>
+              </div>
+              </div>
+          
+              </div>
+              </div>
+              </div>
+              <div id="menu-bar">
+                  <div >EVERYDAY VALUE</div>
+                  <div id="BS">BESTSELLERS</div>
+                  
+<div id="veg">VEG PIZZA</div>
+                  <div id="non-veg">NON-VEG PIZZA</div>
+                  <div>NEW LAUNCHES</div>
+                  <div>BEVERAGES</div>
+                  <div>SPECIALITY CHICKEN</div>
+                  <div>SIDES</div>
+                  <div>PIZZA MANIA</div>
+                  <div>MEAL FOR 2</div>
+                  <div>MEAL FOR 4</div>
+                  <div>DESSERT</div>
+                  <div>CHEFBOSS</div>
+  </div>
+</div>
+    <!-- //******* -->
+    
+
+         <div id="product-container">
+            <div id="container">
+              <!-- Here Append All the Products  -->
+              
+            </div>
+            <div>
+              <div id="cart-container">
+                
+              
+                
+              </div>
+              <div id="price-container">
+
+              </div>
+
+
+            </div>
+            
+          </div> 
+
+    <!-- <div id="sidebar">hello</div>
+         <div id="product-container">
+            <div id="container">
+               Here Append All the Products  -->
+            <!-- </div>
+            <div id="cart-container">
+                <p>hello cart</p>
+            </div> -->
+
+            <div id="footer">
+              <div id="footerdiv1">
+                  <div id="footerlogo">
+                      <img src="images/logo.png" alt="">
+                      <h1>Pizza Passionista</h1>
+      
+                  </div>
+                  <div id="span">
+                      <p>Disclaimer</p>
+                      <p>Privacy Policy</p>
+                      <p>Faq</p>
+                      <p>Terms & Conditions</p>
+                      <p>Feedback</p>
+      
+                  </div>
+              </div>
+      
+              <div id="footerdiv2">
+                  <p>Download App</p>
+                  <img src="https://www.freepnglogos.com/uploads/app-store-logo-png/google-play-and-apple-app-store-logos-22.png"
+                      alt="">
+      
+      
+              </div>
+          </div>
+          <div id="copyright">
+              <p>All Rights Reserved. Copyright © Jubilant FoodWorks Ltd.</p>
+      
+          </div>
+    
+    
+</body>
+<script src="main.js">
+ 
+
+
+</script>
+
+
+ 
+
+
+</html>
