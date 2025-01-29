@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="home.html">Dashboard</a><a href="admin.html">Admin</a><a href="product.html">Product</a><a href="order.html">Orders</a><a href="users.html">Users</a><a id="profile"></a><a id="logout">Logout</a>
+    </nav>
+
+    <h1 style="margin: 40px; color: #007bff;">Users</h1>
+
+
+    <table>
+        <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <footer>© 2023 PizzaPassionista. All rights reserved.</footer>
+</body>
+<script>
+
+
+    // Authetication
+    function authentication(){
+    let arr = JSON.parse(localStorage.getItem('login'))||[]
+
+    console.log(arr)
+        if(arr.length == 0){
+            alert("Please Login First")
+            window.location.replace("login.html");
+            console.log('helo')
+
+        }
+    }
+    authentication();
+    let logout = document.getElementById('logout');
+    logout.addEventListener('click',()=>{
+        let arr1 = [];
+        alert("You Want to LogOut")
+        localStorage.setItem('login',JSON.stringify(arr1));
+        window.location.replace("login.html");
+    })
+
+
+    //profile
+    let arr = JSON.parse(localStorage.getItem('login'))||[]
+   let pro = document.getElementById('profile');
+   pro.textContent = "Hi!👋 "+arr[0].name;
+
+
+
+   let tbody = document.querySelector('tbody');
+    async function fetchapi(){
+        let api = await fetch('https://narrow-internal-record.glitch.me/users');
+        let data = await api.json();
+        console.log(data);
+        append(data);
+    }
+    fetchapi()
+    function append(data){
+        let tr = ""
+        for(let i=0;i<data.length;i++){
+        tr += `
+        <tr>
+        <td>${data[i].id}</td>
+        <td>${data[i].name}</td>
+        <td>${data[i].email}</td>
+        <td>${data[i].mobile}</td>
+        <td class="delete" onclick="delet(${data[i].id})">DELETE</td>
+        </tr>
+        `
+        }   
+        tbody.innerHTML = tr; 
+    }
+
+
+    async function delet(id){
+        let res = await fetch(`https://narrow-internal-record.glitch.me/users/${id}`,{
+            method: "DELETE",
+            headers:{
+                "Content-Type": "application/json"
+            },
+        });
+        fetchapi();
+        let data = await res.json();
+        
+    }
+</script>
+</html>
