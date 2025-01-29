@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="home.html">Dashboard</a><a href="admin.html">Admin</a><a href="product.html">Product</a><a href="order.html">Orders</a><a href="users.html">Users</a><a id="profile"></a><a id="logout">Logout</a>
+    </nav>
+
+    <h1 style="margin: 40px; color: #007bff;">Orders</h1>
+
+    <table>
+        <thead>
+            <tr>
+            <th>Order ID</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Change Status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+    <footer>© 2023 PizzaPassionista. All rights reserved.</footer>
+</body>
+<script>
+
+
+    // Authetication
+    function authentication(){
+    let arr = JSON.parse(localStorage.getItem('login'))||[]
+    console.log(arr)
+        if(arr.length == 0){
+            alert("Please Login First")
+            window.location.replace("login.html");
+            console.log('helo')
+        }
+    }
+    authentication();
+    let logout = document.getElementById('logout');
+    logout.addEventListener('click',()=>{
+        let arr1 = [];
+        alert("You Want to LogOut")
+        localStorage.setItem('login',JSON.stringify(arr1));
+        window.location.replace("login.html");
+    })
+
+    
+
+
+    async function fetchapi(){
+        let res = await fetch('https://narrow-internal-record.glitch.me/orders');
+        let data = await res.json();
+        console.log(data);
+        append(data);
+     }
+     fetchapi();
+
+
+     //profile
+     let arr = JSON.parse(localStorage.getItem('login'))||[]
+    let pro = document.getElementById('profile');
+    pro.textContent = "Hi!👋 "+arr[0].name;
+
+
+    let tbody = document.querySelector('tbody');
+
+
+
+    function append(data){
+
+
+        // let tr = ""
+        // for(let i=0;i<data.length;i++){
+        // tr += `
+        // <tr>
+        // <td>${data[i].id}</td>
+        // <td>${data[i].name}</td>
+        // <td><img src="${data[i].image}"></td>
+        // <td>${data[i].price}</td>
+        // <td id="status">Order Placed</td>
+        // <td>
+        //     <select id="select" onclick="update(${data[i].id})">
+        //         <option>Change Status</option>
+        //         <option value="Order Placed">Order Placed</option>
+        //         <option value="Order Shipped">Order Shipped</option>
+        //         <option value="Order Delivered">Order Delivered</option>
+        //         <option value="Order Cancelled">Order Cancelled</option>
+        //     </select>
+        // </td>
+        // </tr>
+        // `
+
+        // }   
+        // tbody.innerHTML = tr; 
+
+
+        tbody.innerHTML = ""
+        data.forEach((eleement) => {
+            // console.log("order: "+JSON.stringify(eleement));
+            let element = eleement[0];
+            // console.log("after:"+typeof element)
+            // console.log(typeof element);
+            for(let i=0;i<eleement.length;i++){
+                let element = eleement[i]
+
+
+
+
+
+                let tr = document.createElement('tr');
+            let td1 = document.createElement('td');
+            td1.textContent = element.id;
+            
+            let td2 = document.createElement('td');
+            td2.textContent = element.name;
+            
+            let td3 = document.createElement('td');
+            let img = document.createElement('img');
+            img.src = element.image;
+            td3.append(img);
+
+            let td4 = document.createElement('td');
+            td4.textContent = "₹ "+element.price;
+            let td5 = document.createElement('td');
+            td5.textContent = element.status;
+            let td6 = document.createElement('td');
+
+            let select = document.createElement('select');
+            let option = document.createElement('option');
+            option.textContent = "Change Status"
+            let option1 = document.createElement('option');
+            option1.textContent = "Order Placed";
+            option1.value = "Order Placed";
+
+            let option2 = document.createElement('option');
+            option2.textContent = "Order Shipped";
+            option2.value = "Order Shipped";
+
+            let option3 = document.createElement('option');
+            option3.textContent = "Order Delivered";
+            option3.value = "Order Delivered";
+
+            let option4 = document.createElement('option');
+            option4.textContent = "Order Cancelled";
+            option4.value = "Order Cancelled";
+
+            select.setAttribute('id',"change-status");
+
+            select.addEventListener('change',async ()=>{
+                let res1 = await fetch(`https://narrow-internal-record.glitch.me/orders/${element.id}`,{
+                    method: "PATCH",
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({status : select.value})
+                })
+
+                fetchapi();
+            })
+
+
+            select.append(option,option1,option2,option3,option4);
+
+            td6.append(select);
+            tr.append(td1,td2,td3,td4,td5,td6);
+            tbody.append(tr);
+            }
+            
+        });
+    }
+    
+    
+</script>
+</html>
