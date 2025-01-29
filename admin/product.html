@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="home.html">Dashboard</a><a href="admin.html">Admin</a><a href="product.html">Product</a><a href="order.html">Orders</a><a href="users.html">Users</a><a id="profile"></a><a id="logout">Logout</a>
+    </nav>
+
+    <h1 style="margin: 40px; color: #007bff;">Products</h1>
+
+
+    <div>
+        <button id="Add-admin" class="show-product">
+            Show all Product
+        </button>
+        <button id="Add-admin" class="hide-product">
+          Hide Product
+      </button>
+      
+      
+      <div id="body">
+        <h3 id="head">Add pizza</h3>
+          <input
+            type="text"
+            id="pizza-name"
+            class="u-full-width"
+            placeholder="Name"
+          />
+          <input
+            type="text"
+            id="pizza-url"
+            class="u-full-width"
+            placeholder="Pizza url"
+          />
+          <input
+            type="number"
+            id="pizza-price"
+            class="u-full-width"
+            placeholder="price"
+          />
+          <input
+            type="text"
+            id="pizza-category"
+            class="u-full-width"
+            placeholder="category"
+          />
+          <input
+            type="text"
+            id="pizza-desc"
+            class="u-full-width"
+            placeholder="description"
+          />
+          <input
+            type="text"
+            id="pizza-size"
+            class="u-full-width"
+            placeholder="size"
+          />
+          <button id="add-pizza" class="button-primary">
+            Add Pizza
+          </button>
+
+          <!-- <hr /> -->
+
+          <h3 id="head">Change Pizza price</h3>
+          <input
+            type="number"
+            id="change-pizza-id"
+            class="u-full-width"
+            placeholder="Id"
+          />
+          <input
+            type="number"
+            id="change-pizza-price"
+            class="u-full-width"
+            placeholder="price"
+          />
+          <button id="change-price" class="button-primary">
+            Change Price
+          </button>
+
+          
+          <h3 id="head">Update pizza</h3>
+          <input
+            type="number"
+            id="Upizza-id"
+            class="u-full-width"
+            placeholder="Id"
+          />
+          <input
+            type="text"
+            id="Upizza-name"
+            class="u-full-width"
+            placeholder="Name"
+          />
+          <input
+            type="text"
+            id="Upizza-url"
+            class="u-full-width"
+            placeholder="Pizza url"
+          />
+          <input
+            type="number"
+            id="Upizza-price"
+            class="u-full-width"
+            placeholder="price"
+          />
+          <input
+            type="text"
+            id="Upizza-category"
+            class="u-full-width"
+            placeholder="Category"
+          />
+          <input
+            type="text"
+            id="Upizza-desc"
+            class="u-full-width"
+            placeholder="description"
+          />
+          <input
+            type="text"
+            id="Upizza-size"
+            class="u-full-width"
+            placeholder="size"
+          />
+          <button id="Update-pizza" class="button-primary">
+            Update Pizza
+          </button>
+          <br>
+          <h3 id="head">Delete Pizza</h3>
+          <input
+            type="number"
+            id="del_pizza"
+            class="u-full-width"
+            placeholder="Id"
+          />
+          <button id="del" class="button-primary">
+            Detele
+          </button>
+      </div>
+
+    </div>
+    <div id="main-container">
+            <!-- append card here............. -->
+    </div>
+    
+    <footer>© 2023 PizzaPassionista. All rights reserved.</footer>
+</body>
+<script>
+    //profile
+    let arr = JSON.parse(localStorage.getItem('login'))||[]
+   let pro = document.getElementById('profile');
+   pro.textContent = "Hi!👋 "+arr[0].name;
+</script>
+
+</html>
+<script>
+
+    let parent = document.getElementById("main-container");
+    let allBtn = document.querySelector(".show-product");
+    let hideBtn = document.querySelector(".hide-product");
+    let dropBtn = document.querySelector(".drop-product");
+    //  add pizaa
+    let pizzaNameInput = document.getElementById("pizza-name")
+    let pizzaUrlInput = document.getElementById("pizza-url")
+    let pizzaPriceInput = document.getElementById("pizza-price")
+    let pizzaCategoryInput = document.getElementById("pizza-category")
+    let pizzaDescInput = document.getElementById("pizza-desc")
+    let pizzaSizeInput = document.getElementById("pizza-size")
+    let addPizzaBtn  = document.getElementById("add-pizza");
+
+      // change price
+
+      let changeIdInput = document.getElementById("change-pizza-id")
+    let changePrizeInput = document.getElementById("change-pizza-price");
+    
+    let changeBtn = document.getElementById("change-price");
+
+    // upadate pizza 
+     
+    let updateIdInput = document.getElementById("Upizza-id")
+    let updateNameInput = document.getElementById("Upizza-name")
+    let updateUrlInput = document.getElementById("Upizza-url")
+    let updatePriceInput = document.getElementById("Upizza-price")
+    let updateCategoryInput = document.getElementById("Upizza-category")
+    let updateDescInput = document.getElementById("Upizza-desc")
+    let updateSizeInput = document.getElementById("Upizza-size")
+    let updateBtn = document.getElementById("Update-pizza")
+
+    // delete pizza 
+   
+    let delPi = document.getElementById("del_pizza");
+    let delBtn = document.getElementById("del");
+
+    addPizzaBtn.addEventListener("click",(e)=>{
+    e.preventDefault();
+    let name = pizzaNameInput.value;
+    let image = pizzaUrlInput.value;
+    let price = pizzaPriceInput.value;
+    let category = pizzaCategoryInput.value;
+    let description = pizzaDescInput.value;
+    let size = pizzaSizeInput.value;
+
+    fetch(`https://striped-telling-dryer.glitch.me/pizza`,{
+    method:"POST",
+    body : JSON.stringify({
+     name : name,
+     image : image,
+     price : price,
+     category : category,
+     description : description,
+     size : size
+    }),
+    headers:{
+      "content-type":"application/json"
+    }
+  })
+   
+    console.log(name,image,price,description,size)
+
+ });
+
+changeBtn.addEventListener("click",(e)=>{
+  e.preventDefault();
+  let id  = changeIdInput.value;
+  let price = changePrizeInput.value;
+  alert( ` id no ${id} change its price`)
+
+  fetch(`https://striped-telling-dryer.glitch.me/pizza/${id}`,{
+    method : "PATCH",
+    body :JSON.stringify({
+        id : id,
+        price : price
+    }),
+    headers : {
+        "content-type": "application/json"
+    }
+
+  })
+})
+
+updateBtn.addEventListener("click",(e)=>{
+    e.preventDefault();
+    let id = updateIdInput.value;
+    let name = updateNameInput.value;
+    let image = updateUrlInput.value;
+    let price = updatePriceInput.value;
+    let category = updateCategoryInput.value;
+    let description = updateDescInput.value;
+    let size = updateSizeInput.value;
+    alert( ` Are you want to Update Id n0 - ${id} `)
+
+    fetch(`https://striped-telling-dryer.glitch.me/pizza/${id}`,{
+          method : "PUT",
+          body : JSON.stringify({
+            id : id,
+            name : name,
+            image : image,
+            price : price,
+            category:category,
+            description : description,
+            size : size
+          }),
+          headers:{
+            "content-type": "application/json"
+          }
+    })
+    console.log(id,name,image,price,category,description,size)
+})
+
+delBtn.addEventListener("click",(e)=>{
+   e.preventDefault();
+  let id = delPi.value;
+  alert( `Delete id no - ${id}`)
+  fetch(`https://striped-telling-dryer.glitch.me/pizza/${id}`,{
+    method : "DELETE",
+  
+    headers : {
+        "content-type": "application/json"
+    }
+
+  })
+})
+
+allBtn.addEventListener("click",async()=>{
+    try{
+        let res = await fetch(`https://striped-telling-dryer.glitch.me/pizza`);
+        let data = await res.json();
+        console.log(data)
+        renderdata(data)
+    }catch(err){
+        console.log(err)
+    }
+})
+
+function renderdata(arrdata){
+  let cardlist = `
+  <div class = "card-list">
+    ${arrdata.map((item)=>getData(item.id,item.name,item.image,item.price,item.category,item.description,item.size)).join("")}</div>
+  `
+  parent.innerHTML=cardlist;
+}
+
+function getData(id,name,image,price,category,description,size){
+  let card = `
+  <div class="card">
+    <div class="image">
+    <img src="${image}" alt="">
+    </div>
+    <div class="all">
+    <h4>id: ${id}</h4>
+    <h3>Name: ${name}</h3>
+    <p>Price: ${price}</p>
+    <h4>Category: ${category}</h4>
+    <p>Description: ${description}</p>
+    <h4>Size: ${size}</h4>
+    </div>
+    </div>
+  `
+  return card;
+}
+hideBtn.addEventListener("click",()=>{
+  parent.innerHTML=""
+})
+
+// dropBtn.addEventListener("click",())
+
+</script>
