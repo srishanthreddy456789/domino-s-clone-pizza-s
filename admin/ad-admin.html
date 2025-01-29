@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(241, 241, 241);
+        }
+        input{
+            width: 80%;
+            height: 30px;
+            border-radius: 0;
+            margin-top: 20px;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+        .main{
+            width: 30%;
+            margin: auto;
+            padding: 80px;
+            text-align: center;
+            margin-top: 120px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+        }
+        p{
+            color: rgb(110, 108, 108);
+            /* font-weight: 900; */
+            margin-top: 20px;
+        }
+        img{
+            position: absolute;
+            top: 20px;
+            left: 44%;
+            width: 200px;
+        }
+        button{
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        }
+        a{
+            text-decoration: none;
+            color: #007bff;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img src="https://cdn4.iconfinder.com/data/icons/user-icons-5/100/user-13-512.png" alt="">
+    
+    <div class="main">
+        
+            
+            <br>
+            <p>Add New Admin</p>
+            <input type="email" id="email" placeholder="Enter Email Here">
+            <br>
+            <input type="text" id='name' placeholder="Enter Name Here">
+            <br>
+            <input type="password" id="pass" placeholder="Enter Password">
+            <br>
+
+
+            <button id="submit">Add Admin</button>
+            <br>
+    </div>
+    <button id="back"> << Go Back</button>
+</body>
+<script>
+    let username = document.getElementById('email');
+    let name = document.getElementById('name');
+    let password = document.getElementById('pass');
+    let login = document.getElementById('submit');
+    let back = document.getElementById('back');
+
+    login.addEventListener('click',()=>{
+        if(username.value == ""){
+            alert('Please Enter the Valid Email');
+        }
+        if(name.value == ""){
+            alert("Please Enter the Name To Continue");
+        }
+        if(password.value == ""){
+            alert('Enter the Password');
+        }
+
+
+        fetcha();
+    })
+
+    async function fetcha(){
+        let obj = {
+            name: name.value,
+            email: username.value,
+            password: password.value
+        }
+
+        let a = await fetch('https://flashy-twisty-sundae.glitch.me/users',{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(obj)
+
+        });
+        window.location.replace("admin.html");
+    }
+    back.addEventListener('click',()=>{
+        window.location.replace("admin.html");
+    })
+</script>
+</html>
