@@ -22,9 +22,6 @@ Menu Page:
 <br>
 <img src="images/meni.png"/>
 <br>
-
-<img src="images/menu1.png"/>
-<br>
 <br>
 Cart Page:
 <br>
