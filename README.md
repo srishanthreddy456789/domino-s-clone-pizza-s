@@ -37,27 +37,31 @@ Payment Section:
 
 <br>
 <br>
-## Tech Used
+## 🚀 Features
 
-**Client:** Javascript | HTML | CSS
+- **Responsive Design** – Works seamlessly on all screen sizes.
+- **Interactive UI** – Engaging animations and smooth scrolling.
+- **Menu Showcase** – Displays restaurant menu items beautifully.
+- **Contact Form** – Allows users to reach out easily.
+- **Bootstrap Integration** – Ensures fast and flexible styling.
+- **Optimized Performance** – Fast loading with clean code.
 
-**Server:** https://narrow-internal-record.glitch.me  
+## 🛠️ Technologies Used
 
-**GitHub:** To maintain repository and version control.
+- **HTML5** – Structure of the website
+- **CSS3** – Styling and responsiveness
+- **JavaScript** – Interactivity and dynamic behavior
+- **Bootstrap** – Grid system and pre-styled components
 
-**VS Code:** To write JavaScript, CSS, and HTML.
 
-**Microsoft Edge, Google Chrome & Mozilla Firefox:** To check the functionality and run the code.
+## 📜 License
+This project is licensed under the MIT License. See the LICENSE file for details
 
-## Pages
-
-- Home page
-- Login | Signup page | Logout
-- Product Page
-- Cart Page 
-- Payment Page
-- Admin Page
-  
+## ✨ Author
+👤 [Srishanth Reddy Narra]<br>
+📧 Email: srishanthreddy456@gmail.com<br>
+🔗 Mobile no: +91-8328214109<br>
+📌 LinkedIn: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/srishanth-reddy-narra-61a1142a0/)
 
 
 <br>
