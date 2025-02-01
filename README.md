@@ -35,6 +35,4 @@
   
 
 
- GitHub: https://github.com/psudhansu/Pizza-Passionista
-
 <br>
