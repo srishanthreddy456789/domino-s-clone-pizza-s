@@ -16,23 +16,27 @@ Home Page:
 
 
 <img src="images/home.png"/>
-
+<br>
+<br>
 Menu Page:
-
+<br>
 <img src="images/meni.png"/>
-
+<br>
 
 <img src="images/menu1.png"/>
-
+<br>
+<br>
 Cart Page:
-
+<br>
 <img src="images/cart.png"/>
-
+<br>
+<br>
 Payment Section:
-
+<br>
 <img src="images/payment section.png"/>
 
-
+<br>
+<br>
 ## Tech Used
 
 **Client:** Javascript | HTML | CSS
