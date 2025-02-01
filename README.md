@@ -10,9 +10,9 @@
 
 
 
-## Deployment Link -  https://amazing-alfajores-9f774e.netlify.app
+## 📸 Screenshots
 
-## Tech Stack
+## Tech Used
 
 **Client:** Javascript | HTML | CSS
 
